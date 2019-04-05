@@ -43,8 +43,8 @@ namespace C0732135_Assignment4
                     counter++;
                 }
                 file.Close();
-                counter = File.ReadLines("Beowulf.txt").Count();
-                Console.WriteLine("The file has " + counter + "has lines in total");
+                counter = File.ReadLines("assignment.txt").Count();
+                Console.WriteLine("The file has " + counter + " has lines in total");
             }
         }
         public int FindNumberOfBlankSpaces(string line)
