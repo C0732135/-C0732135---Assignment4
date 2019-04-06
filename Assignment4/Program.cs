@@ -20,6 +20,7 @@ namespace C0732135_Assignment4
             p.ReadTextFiles();
             p.ReadTextFile();
             p.Wordfind();
+            p.Wf();
 
             Console.ReadLine();
         }
@@ -90,6 +91,31 @@ namespace C0732135_Assignment4
             }
             Console.WriteLine("Total number of lines which contains word sea and Fare:" + a);
         }
+        //SECTION D
+        public void Wf()
+        {
+            int a = 0, b = 0, c = 0;
+
+            foreach (var line in File.ReadAllLines("assignment.txt"))
+            {
+                if (line.Contains("fare"))
+                {
+                    a++;
+                }
+
+            }
+            foreach (var line in File.ReadAllLines("assignment.txt"))
+            {
+                if (line.Contains("war") && line.Contains("fare"))
+                {
+                    b++;
+                }
+
+            }
+            c = a - b;
+            Console.WriteLine("Total lines that have fare but not the war are: " + c);
+        }
+
         public int FindNumberOfBlankSpaces(string line)
         {
             https://stackoverflow.com/questions/17812566/count-words-and-spaces-in-string-c-sharp
