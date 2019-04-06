@@ -21,6 +21,7 @@ namespace C0732135_Assignment4
             p.ReadTextFile();
             p.Wordfind();
             p.Wf();
+            p.Average();
 
             Console.ReadLine();
         }
@@ -115,6 +116,19 @@ namespace C0732135_Assignment4
             c = a - b;
             Console.WriteLine("Total lines that have fare but not the war are: " + c);
         }
+        //SECTION E
+        public void Average()
+        {
+
+            StreamReader reader = new StreamReader("assignment.txt");
+            string read = reader.ReadToEnd();
+            int number = 0;
+            foreach (char letter in read)
+            { number++; }
+            Console.WriteLine("Total number of letters after every word:  " + number);
+
+        }
+
 
         public int FindNumberOfBlankSpaces(string line)
         {
