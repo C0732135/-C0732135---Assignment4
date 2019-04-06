@@ -18,6 +18,7 @@ namespace C0732135_Assignment4
             Program p = new Program();
             p.Beowulf = new ArrayList();
             p.ReadTextFiles();
+            p.ReadTextFile();
 
             Console.ReadLine();
         }
@@ -25,6 +26,7 @@ namespace C0732135_Assignment4
         {
             this.ReadTextFiles();
         }
+        //SECTION A
 
         public void ReadTextFiles()
         {
@@ -46,6 +48,31 @@ namespace C0732135_Assignment4
                 counter = File.ReadLines("assignment.txt").Count();
                 Console.WriteLine("The file has " + counter + " has lines in total");
             }
+        }
+        //SECTION B
+        public void ReadTextFile()
+        {
+
+            var reader = new StreamReader("assignment.txt");
+            string script = reader.ReadToEnd();
+
+            var text = script.Trim();
+            int Count = 0, index = 0;
+
+            while (index < text.Length)
+            {
+
+                while (index < text.Length && !char.IsWhiteSpace(text[index]))
+                    index++;
+
+                Count++;
+
+                while (index < text.Length && char.IsWhiteSpace(text[index]))
+                    index++;
+            }
+
+            Console.WriteLine("Total Number of Words are " + Count);
+
         }
         public int FindNumberOfBlankSpaces(string line)
         {
